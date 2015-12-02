@@ -286,7 +286,7 @@ var authenticateForDeviceLabels = function(callback) {
             return callback(new Error('getUserMedia not supported in this browser'));
           }
           getUserMedia(constraints, function(stream) {
-            stream.stop();
+            stream.stop=true;
             callback();
           }, function(error) {
             var err = new Error(gumNamesToMessages[error.name]);
